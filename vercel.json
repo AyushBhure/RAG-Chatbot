@@ -3,14 +3,8 @@
   "outputDirectory": "frontend/dist",
   "rewrites": [
     {
-      "source": "/api/(.*)",
-      "destination": "/api"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
-  ],
-  "env": {
-    "ENVIRONMENT": "prod",
-    "VECTOR_STORE_DIR": "/tmp/vectorstore",
-    "MLFLOW_TRACKING_URI": "/tmp/mlflow"
-  }
+  ]
 }
-
