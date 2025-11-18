@@ -1,8 +1,8 @@
-# RAG Chatbot 🚀
+# RAG Chatbot
 
 A smart document chatbot that actually understands your PDFs and text files. Upload your documents, ask questions, and get answers with source citations. Built with FastAPI, LangChain, and React.
 
-🌐 **Try it live:** https://rag-chatbot-six-gules.vercel.app
+**Try it live:** https://rag-chatbot-six-gules.vercel.app
 
 ## What It Does
 
@@ -10,13 +10,13 @@ Ever wish you could just ask questions about your documents instead of scrolling
 
 ## Key Features
 
-- 📄 **Document Upload**: Drag and drop PDFs or text files
-- 🔍 **Smart Search**: Vector embeddings find the most relevant document chunks
-- 💬 **Chat Interface**: Clean, ChatGPT-like UI for asking questions
-- 📚 **Source Citations**: Every answer shows which documents and pages it came from
-- 🛡️ **Automatic Fallbacks**: Works even if some dependencies fail (Windows-friendly!)
-- 🐳 **Docker Ready**: One command to run everything locally
-- ☁️ **Vercel Deployed**: Already live and ready to use
+- Document Upload: Drag and drop PDFs or text files
+- Smart Search: Vector embeddings find the most relevant document chunks
+- Chat Interface: Clean, ChatGPT-like UI for asking questions
+- Source Citations: Every answer shows which documents and pages it came from
+- Automatic Fallbacks: Works even if some dependencies fail (Windows-friendly!)
+- Docker Ready: One command to run everything locally
+- Vercel Deployed: Already live and ready to use
 
 ## Quick Start
 
@@ -176,14 +176,14 @@ rag-chatbot/
 
 ## Current Status
 
-✅ **Working:**
+**Working:**
 - Document upload and processing
 - Vector search and retrieval
 - Question answering with citations
 - Professional chat UI
 - Automatic fallbacks for compatibility
 
-🔧 **Current Setup:**
+**Current Setup:**
 - Using fake embeddings (fallback mode)
 - Using in-memory vector store (fallback mode)
 - Using mock LLM by default
@@ -218,4 +218,4 @@ MIT
 
 ---
 
-Built with ❤️ using FastAPI, LangChain, React, and lots of coffee.
+Built with FastAPI, LangChain, React, and lots of coffee.
