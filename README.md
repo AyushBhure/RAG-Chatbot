@@ -211,7 +211,3 @@ Note: On Windows, use proper `file://` URI format or disable MLflow for testing.
 - Swap ChromaDB with Pinecone by replacing the vector store instantiation in `rag.py`
 - Enable real embeddings by fixing PyTorch or using OpenAI embeddings
 - Integrate scheduled ingest pipelines (Airflow), monitoring (Prometheus), or auth (OAuth/JWT) as needed
-
-## License
-
-MIT
