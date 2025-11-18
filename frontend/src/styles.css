@@ -29,6 +29,110 @@ body {
   background: #343541;
 }
 
+/* Important Notice */
+.important-notice {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: white;
+  padding: 1rem 2rem;
+  animation: slideDown 0.5s ease-out, pulse 2s ease-in-out infinite;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+  position: relative;
+  z-index: 200;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(239, 68, 68, 0.5);
+  }
+}
+
+.notice-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.notice-content strong {
+  font-weight: 600;
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+.notice-details {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.notice-details summary {
+  cursor: pointer;
+  font-weight: 500;
+  user-select: none;
+  padding: 0.5rem 0;
+  transition: opacity 0.2s;
+}
+
+.notice-details summary:hover {
+  opacity: 0.9;
+}
+
+.notice-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.notice-details summary::before {
+  content: "▶ ";
+  display: inline-block;
+  margin-right: 0.5rem;
+  transition: transform 0.2s;
+  font-size: 0.75rem;
+}
+
+.notice-details[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.notice-details ul {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+  list-style: disc;
+}
+
+.notice-details li {
+  margin: 0.75rem 0;
+  line-height: 1.6;
+}
+
+.notice-details code {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+  font-family: 'Courier New', monospace;
+  font-size: 0.875rem;
+}
+
+.notice-details p {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  font-weight: 500;
+}
+
 /* Header */
 header {
   background: #202123;
