@@ -94,16 +94,10 @@ export default function App() {
     <div className="app">
       <div className="important-notice">
         <div className="notice-content">
-          <strong>Important Notice:</strong> This application is currently not fully functional.
+          <strong>Note:</strong> This is a frontend demo. Backend API is not deployed, so upload and chat features are currently unavailable.
           <details className="notice-details">
-            <summary>Why is it not working? (Click to expand)</summary>
-            <ul>
-              <li><strong>Backend API Not Deployed:</strong> Only the frontend is deployed on Vercel. The FastAPI backend server is not running, so API calls to <code>/api/upload</code> and <code>/api/ask</code> will fail.</li>
-              <li><strong>Missing Serverless Functions:</strong> The backend API endpoints need to be deployed as Vercel serverless functions, but they are not currently configured or deployed.</li>
-              <li><strong>No Vector Database:</strong> Even if the backend was deployed, it would need a persistent vector database (like Pinecone) since Vercel's filesystem is ephemeral.</li>
-              <li><strong>Environment Variables:</strong> Required environment variables (like <code>OPENAI_API_KEY</code>) are not configured in the Vercel deployment.</li>
-            </ul>
-            <p><strong>To make it work:</strong> Deploy the backend API as Vercel serverless functions, configure environment variables, and set up a persistent vector database.</p>
+            <summary>Technical details</summary>
+            <p>Only the frontend is deployed. The backend API needs to be configured as Vercel serverless functions with environment variables and a vector database to enable full functionality.</p>
           </details>
         </div>
       </div>
