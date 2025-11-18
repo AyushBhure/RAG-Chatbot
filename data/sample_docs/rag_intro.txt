@@ -1,0 +1,2 @@
+Retrieval Augmented Generation (RAG) combines information retrieval with large language models to answer domain-specific questions reliably.
+

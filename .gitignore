@@ -1,0 +1,11 @@
+__pycache__/
+.pytest_cache/
+.venv/
+*.pyc
+node_modules/
+frontend/dist/
+vectorstore/
+mlflow/
+.env
+*.sqlite
+
