@@ -11,7 +11,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 class LLMSettings(BaseModel):
     """LLM configuration."""
 
-    provider: Literal["openai", "mock"] = "openai"
+    provider: Literal["openai", "mock"] = "mock"  # Default to mock for easier testing
     model_name: str = "gpt-4o-mini"
     temperature: float = 0.2
     max_tokens: int = 512
@@ -37,10 +37,10 @@ class Settings(BaseSettings):
     openai_api_key: str | None = None
 
     # MLflow
-    mlflow_tracking_uri: str = str(Path("mlflow").resolve())
+    mlflow_tracking_uri: str = ""
 
     # Feature toggles
-    enable_mlflow: bool = True
+    enable_mlflow: bool = False  # Disabled by default for easier testing
 
     model_config = SettingsConfigDict(env_file=".env", env_nested_delimiter="__")
 
@@ -52,5 +52,13 @@ def get_settings() -> Settings:
     settings = Settings()
     settings.upload_dir.mkdir(parents=True, exist_ok=True)
     Path(settings.vector_store_dir).mkdir(parents=True, exist_ok=True)
+    
+    # Set MLflow URI to file:// format for Windows compatibility
+    if not settings.mlflow_tracking_uri:
+        mlflow_dir = Path("mlflow").resolve()
+        mlflow_dir.mkdir(parents=True, exist_ok=True)
+        # Use file:// URI format for Windows paths
+        settings.mlflow_tracking_uri = f"file:///{str(mlflow_dir).replace(chr(92), '/')}"
+    
     return settings
 

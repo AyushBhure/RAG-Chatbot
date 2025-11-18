@@ -16,7 +16,7 @@ class UploadResponse(BaseModel):
 class AskRequest(BaseModel):
     """User question payload."""
 
-    query: str = Field(..., min_length=3)
+    query: str = Field(..., min_length=1)
     top_k: int | None = Field(None, ge=1, le=10)
 
 

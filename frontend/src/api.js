@@ -11,8 +11,14 @@ export async function uploadDocuments(files) {
   return data;
 }
 
-export async function askQuestion(query) {
-  const { data } = await axios.post(`${API_BASE}/ask`, { query });
+export async function askQuestion(query, top_k = null) {
+  const payload = { query: query.trim() };
+  if (top_k !== null) {
+    payload.top_k = top_k;
+  }
+  const { data } = await axios.post(`${API_BASE}/ask`, payload, {
+    headers: { "Content-Type": "application/json" },
+  });
   return data;
 }
 
