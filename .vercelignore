@@ -1,0 +1,14 @@
+backend/
+api/
+data/
+mlflow/
+vectorstore/
+requirements.txt
+docker-compose.yml
+*.pyc
+__pycache__/
+.pytest_cache/
+.env
+*.sqlite
+.git/
+
