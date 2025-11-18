@@ -125,11 +125,28 @@ Backend listens on `http://localhost:8000`, frontend on `http://localhost:5173`.
    The frontend builds from `frontend/` via Vite and serves at the project root; the FastAPI backend is exposed under `/api/*` using the serverless entrypoint at `backend/api/index.py`.
 4. In the frontend, `VITE_API_BASE` defaults to `/api`, so no additional configuration is needed.
 5. Add a custom domain (optional):
+   
+   **Option A: Via Vercel Dashboard (Recommended)**
+   - Go to https://vercel.com/dashboard
+   - Select your project: `rag-chatbot`
+   - Click "Settings" → "Domains"
+   - Click "Add Domain" and enter your domain (e.g., `yourdomain.com` or `www.yourdomain.com`)
+   - Follow Vercel's DNS configuration instructions:
+     - For root domain: Add an A record pointing to Vercel's IP
+     - For subdomain: Add a CNAME record pointing to `cname.vercel-dns.com`
+   - Wait for DNS propagation (usually 5-60 minutes)
+   - SSL certificate is automatically provisioned by Vercel
+   
+   **Option B: Via CLI (if you already own a domain)**
    ```bash
-   vercel domains add <your-domain.com>
-   vercel alias <deployment-url> <your-domain.com>
+   # Add domain to your Vercel account
+   vercel domains add yourdomain.com
+   
+   # Link domain to your project
+   vercel alias rag-chatbot-ef3j742q3-ayushbhures-projects.vercel.app yourdomain.com
    ```
-   Update DNS records per Vercel’s instructions. Once propagated, your domain will serve the React UI while `/api/*` continues to proxy to FastAPI.
+   
+   Once DNS propagates, your domain will serve the React UI while `/api/*` continues to proxy to FastAPI.
 
 ## Usage
 1. Upload PDF/TXT files via frontend or `POST /upload`.
