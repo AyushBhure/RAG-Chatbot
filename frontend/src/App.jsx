@@ -94,10 +94,10 @@ export default function App() {
     <div className="app">
       <div className="important-notice">
         <div className="notice-content">
-          <strong>Note:</strong> This is a frontend demo. Backend API is not deployed, so upload and chat features are currently unavailable.
+          <strong>Note:</strong>This is a frontend demo, so file upload and chat features are currently unavailable.
           <details className="notice-details">
             <summary>Technical details</summary>
-            <p>Only the frontend is deployed. The backend API needs to be configured as Vercel serverless functions with environment variables and a vector database to enable full functionality.</p>
+            <p>The backend API needs to be configured as serverless functions with environment variables and a vector database to enable full functionality.</p>
           </details>
         </div>
       </div>
