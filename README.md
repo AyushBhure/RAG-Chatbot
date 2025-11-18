@@ -34,7 +34,7 @@ rag-chatbot/
 │   ├── src/                 # React chat app
 │   ├── package.json
 │   └── Dockerfile
-├── api/                     # Vercel serverless entrypoint
+├── api/                     # Vercel serverless entrypoin
 ├── docker-compose.yml
 └── vercel.json
 ```
